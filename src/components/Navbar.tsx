@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Search, Bell, ChevronDown, Menu, X, Sparkles } from "lucide-react";
+import { Search, Bell, Menu, X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
@@ -175,17 +175,7 @@ const Navbar: React.FC = () => {
               </motion.button>
             </div>
 
-            {/* Profile */}
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              className="hidden md:flex items-center gap-2 cursor-pointer group glass-card rounded-xl px-3 py-1.5 border border-white/5 hover:border-[#c9a227]/30 transition-all duration-300"
-            >
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#c9a227] to-[#8b5e00] flex items-center justify-center text-[#080810] text-xs font-black shadow-lg">
-                A
-              </div>
-              <span className="text-sm text-gray-300 group-hover:text-white font-medium transition-colors">Alokesh</span>
-              <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#c9a227] transition-all group-hover:rotate-180 duration-300" />
-            </motion.div>
+
 
             {/* Mobile Menu Button */}
             <motion.button
