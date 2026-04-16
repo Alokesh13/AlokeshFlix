@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080810;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c9a227, #e8c84a);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e8c84a;
+}
+
+/* Hide scrollbar for rows */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(201, 162, 39, 0.4);
+  color: white;
+}
+
+/* Iframe */
+iframe {
+  border: none;
+}
+
+/* Gold shimmer text */
+.gold-text {
+  background: linear-gradient(135deg, #c9a227 0%, #f5e27a 40%, #c9a227 70%, #e8c84a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glow effects */
+.gold-glow {
+  box-shadow: 0 0 30px rgba(201, 162, 39, 0.3), 0 0 60px rgba(201, 162, 39, 0.1);
+}
+
+.gold-glow-text {
+  text-shadow: 0 0 20px rgba(201, 162, 39, 0.6);
+}
+
+/* Premium gradient bg */
+.bg-premium {
+  background: radial-gradient(ellipse at 20% 50%, rgba(201, 162, 39, 0.04) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.04) 0%, transparent 60%),
+              #080810;
+}
+
+/* Card shine effect */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(201, 162, 39, 0.05) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%);
+  transition: transform 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.card-shine:hover::before {
+  transform: translateX(100%) translateY(100%);
+}
+
+/* Animated gradient border */
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animated-border {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Particle glow */
+@keyframes particleGlow {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Premium button */
+.btn-premium {
+  background: linear-gradient(135deg, #c9a227, #e8c84a);
+  color: #080810;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e8c84a, #fff9d6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-premium:hover::after {
+  opacity: 0.2;
+}
+.btn-premium:hover {
+  box-shadow: 0 8px 30px rgba(201, 162, 39, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Hero overlay vignette */
+.hero-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(8, 8, 16, 0.8) 100%);
+}
+
+/* Loading skeleton pulse */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #0d0d1a 25%, #1a1a2e 50%, #0d0d1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
