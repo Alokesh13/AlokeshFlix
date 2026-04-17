@@ -57,10 +57,10 @@ const WatchMovie: React.FC = () => {
     ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`
     : null;
 
-  const embedUrl = `https://www.vidking.net/embed/movie/${movie.id}?color=c9a227&autoPlay=true`;
+  const embedUrl = `https://www.vidking.net/embed/movie/${movie.id}?color=e50914&autoPlay=true`;
 
   return (
-    <div className="bg-[#080810] min-h-screen">
+    <div className="bg-[#08060a] min-h-screen">
       {/* Player Section */}
       <div className="bg-black pt-16">
         {/* Top Bar */}
@@ -68,14 +68,14 @@ const WatchMovie: React.FC = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex items-center justify-between px-4 md:px-8 py-3.5 border-b border-white/5 bg-[#080810]/80 backdrop-blur-sm"
+          className="flex items-center justify-between px-4 md:px-8 py-3.5 border-b border-[#e50914]/15 bg-[#08060a]/90 backdrop-blur-md"
         >
           <div className="flex items-center gap-3">
             <motion.button
               whileHover={{ scale: 1.05, x: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 text-gray-300 hover:text-[#c9a227] transition-colors glass-card px-3 py-2 rounded-lg border border-white/5 hover:border-[#c9a227]/30"
+              className="flex items-center gap-2 text-gray-300 hover:text-[#e50914] transition-colors glass-card px-3 py-2 rounded-lg hover:border-[#e50914]/60 hover:shadow-[0_0_15px_rgba(229,9,20,0.3)]"
             >
               <ArrowLeft className="w-4 h-4" />
               <span className="text-sm font-medium hidden sm:inline">Back</span>
@@ -85,7 +85,7 @@ const WatchMovie: React.FC = () => {
           {/* Title info */}
           <div className="flex items-center gap-3 flex-1 mx-4">
             {posterUrl && (
-              <div className="w-8 h-11 rounded-lg overflow-hidden border border-[#c9a227]/20 shrink-0 shadow-lg">
+              <div className="w-8 h-11 rounded-lg overflow-hidden border border-[#e50914]/40 shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.4)]">
                 <img src={posterUrl} alt={movie.title} className="w-full h-full object-cover" />
               </div>
             )}
@@ -105,8 +105,8 @@ const WatchMovie: React.FC = () => {
                   </span>
                 )}
                 {movie.vote_average > 0 && (
-                  <span className="flex items-center gap-1 text-[#c9a227] font-semibold">
-                    <Star className="w-3 h-3 fill-[#c9a227]" />
+                  <span className="flex items-center gap-1 text-[#ffb800] font-semibold">
+                    <Star className="w-3 h-3 fill-[#ffb800]" />
                     {movie.vote_average.toFixed(1)}
                   </span>
                 )}
