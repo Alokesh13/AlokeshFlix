@@ -82,18 +82,18 @@ const Home: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="relative z-10 -mt-6 pt-4"
+        className="relative z-10 -mt-8 pt-4"
       >
         {/* Subtle top fade */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#080810] to-transparent pointer-events-none z-10" />
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#08060a] to-transparent pointer-events-none z-10" />
 
         <div className="pt-8">
           <MediaRow title="Now In Cinemas" items={nowPlaying} mediaType="movie" badge="New" />
-          <MediaRow title="Trending Movies" items={popularMovies} mediaType="movie" />
-          <MediaRow title="Trending This Week" items={trendingTV} mediaType="tv" badge="Hot" badgeColor="bg-gradient-to-r from-red-600 to-orange-500 text-white" />
-          <MediaRow title="Top Rated Movies" items={topRatedMovies} mediaType="movie" badge="⭐ Top" badgeColor="bg-gradient-to-r from-[#c9a227]/20 to-[#e8c84a]/20 text-[#c9a227] border border-[#c9a227]/30" />
+          <MediaRow title="Trending Movies" items={popularMovies} mediaType="movie" badge="🔥 Hot" />
+          <MediaRow title="Trending This Week" items={trendingTV} mediaType="tv" badge="Hot" />
+          <MediaRow title="Top Rated Movies" items={topRatedMovies} mediaType="movie" badge="⭐ Top" badgeColor="bg-gradient-to-r from-[#ffb800] to-[#ff8a00] text-black shadow-[0_0_15px_rgba(255,184,0,0.5)]" />
           <MediaRow title="Popular TV Shows" items={popularTV} mediaType="tv" />
-          <MediaRow title="Currently On Air" items={onAirTV} mediaType="tv" badge="Live" badgeColor="bg-green-500/20 text-green-400 border border-green-500/30" />
+          <MediaRow title="Currently On Air" items={onAirTV} mediaType="tv" badge="Live" badgeColor="bg-green-500/20 text-green-400 border border-green-500/40 shadow-[0_0_15px_rgba(34,197,94,0.3)]" />
           <MediaRow title="Top Rated Series" items={topRatedTV} mediaType="tv" />
         </div>
       </motion.div>
